@@ -1,5 +1,6 @@
 package com.example.contact.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -19,10 +20,12 @@ import java.util.Date;
 public class Auditable {
 
     @CreatedDate
+    @JsonProperty("created_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
     @LastModifiedDate
+    @JsonProperty("updated_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
